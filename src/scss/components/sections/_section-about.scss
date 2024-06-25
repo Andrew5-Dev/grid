@@ -1,0 +1,150 @@
+@use "../../presets/index" as *;
+@use "../../mixins/index" as *;
+
+.about {
+  letter-spacing: 0.9px;
+  background-color: $color-gray-light;
+  @include lg-min {
+    padding-top: $gap-x5;
+    padding-bottom: 62px;
+  }
+  @include lg-md {
+    padding-top: 68px;
+    // padding-bottom: $gap-x4;
+  }
+  @include md {
+    padding-top: $gap-x3;
+    padding-bottom: $gap-x3;
+  }
+
+  h2 {
+
+    color: $color-primary;
+    font-weight: 700;
+    font-family: $font-header;
+    padding: 0 0 50px 0;
+    @include lg-min {
+      font-size: 40px;
+      letter-spacing: 3.7px;
+      line-height: 48px;
+    }
+    @include lg-md {
+      font-size: 32px;
+      line-height: 40px;
+    }
+    @include md-sm {
+      font-size: 24px;
+      line-height: 32px;
+    }
+    @include sm {
+      font-size: 24px;
+      text-align: center;
+      line-height: 28px;
+    }
+  }
+
+  &__container {
+    display: grid;
+    width: min(100% - $gap-x2, $container-size);
+    margin-inline: auto;
+
+    @include ul-min {
+      gap: $gap-x5;
+      grid-template-columns: 936px 271px;
+    }
+    @include ul-lg {
+      gap: $gap-x2;
+      grid-template-columns: 1fr 271px;
+    }
+    @include lg-md {
+      gap: $gap-x2;
+      grid-template-columns: 1fr 271px;
+    }
+    @include md-sm {
+      gap: $gap;
+      grid-template-columns: 1fr 236px;
+    }
+    @include sm {
+      gap: $gap;
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__content {
+    p {
+      @include lg-min {
+        font-size: 18px;
+        line-height: 24px;
+        display: block;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+      }
+      @include lg-md {
+        font-size: 18px;
+        line-height: 24px;
+        display: block;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+      }
+      @include md-sm {
+        font-size: 16px;
+        line-height: 24px;
+        display: block;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+      }
+      @include sm {
+        font-size: 16px;
+        line-height: 24px;
+        display: block;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+      }
+
+      &:first-of-type {
+        position: relative;
+        margin-top: -5px;
+
+        &::after {
+          height: 200px;
+          position: absolute;
+          top: 0;
+          width: 2px;
+          content: "";
+          background-color: rgba($color-gray, 0.1);
+          @include ul-min {
+            right: -$gap * 2.5;
+          }
+          @include ul-lg {
+            right: -$gap;
+          }
+
+          @include lg-md {
+            right: -$gap;
+          }
+          @include md-sm {
+            right: -$gap-sm;
+          }
+          @include sm {
+            display: none;
+          }
+        }
+      }
+
+      &:last-of-type {
+        margin: 0;
+      }
+    }
+  }
+
+  &__image {
+    display: grid;
+    align-content: center;
+    justify-items: center;
+
+    img {
+      max-width: 100%;
+      margin-right: 14px;
+    }
+  }
+}

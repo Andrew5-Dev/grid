@@ -1,0 +1,25 @@
+@use "../../presets" as *;
+@use "../../mixins" as *;
+
+.header {
+  position: relative;
+  min-height: 1080px;
+  background-image: url("../../../../assets/images/img-header.png");
+  background-color: $color-primary;
+  background-position: center;
+  background-size: cover;
+  padding: 150px 0;
+
+  display: grid;
+  align-content: center;
+  color: $color-white;
+  @include lg {
+    min-height: 767px;
+  }
+  @include md {
+    min-height: 560px;
+  }
+  @include sm {
+    min-height: 990px;
+  }
+}

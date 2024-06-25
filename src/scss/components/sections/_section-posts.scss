@@ -1,0 +1,76 @@
+@use "../../presets/index" as *;
+@use "../../mixins/index" as *;
+
+.posts {
+  @include lg-min {
+    padding-top: $gap-x5;
+    padding-bottom: $gap-x5;
+
+  }
+  @include lg-md {
+    padding-top: $gap-x4;
+    padding-bottom: $gap-x4;
+  }
+  @include md {
+    padding-top: $gap-x3;
+    padding-bottom: $gap-x3;
+  }
+
+  h2 {
+    margin-top: 0;
+    margin-bottom: 58px;
+    letter-spacing: 0.1em;
+    font-family: $font-header;
+    line-height: 1.2em;
+    color: $color-primary;
+
+    @include lg-min {
+      font-size: 2.5rem;
+    }
+    @include lg-md {
+      font-size: 2.0rem;
+    }
+  }
+
+  &__container {
+    @extend %container;
+  }
+
+  &__grid {
+    display: grid;
+    padding-bottom: $gap;
+    gap: $gap;
+    @include lg-min {
+      grid-template-areas: "p1 p1 p2 p3" "p4 p5 p6 p6";
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: 550px;
+    }
+    @include lg-md {
+      grid-template-areas: "p1 p1 p2" "p3 p4 p4" "p5 p5 p6";
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @include md-sm {
+      grid-template-areas: "p1 p2" "p3 p4" "p5 p6";
+      grid-template-columns: 1fr 1fr;
+    }
+    @include sm {
+      grid-template-areas: "p1" "p2" "p3" "p4" "p5" "p6";
+    }
+  }
+
+  &__actions {
+    @include sm-min {
+      display: flex;
+      justify-content: center;
+    }
+
+    .btn--primary {
+      @include sm-min {
+        min-width: 350px;
+      }
+      @include sm {
+        width: 100%;
+      }
+    }
+  }
+}
