@@ -1,4 +1,5 @@
 node_modules/
 # IntellijIdea files
 .idea/
+.samples/
 .DS_Store
