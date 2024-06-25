@@ -18,7 +18,7 @@
 
   h2 {
     margin-top: 0;
-    margin-bottom: 58px;
+    margin-bottom: 3rem;
     letter-spacing: 0.1em;
     font-family: $font-header;
     line-height: 1.2em;
@@ -29,6 +29,10 @@
     }
     @include lg-md {
       font-size: 2.0rem;
+    }
+    @include sm {
+      text-align: center;
+      margin-bottom: 2rem;
     }
   }
 
