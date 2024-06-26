@@ -80,7 +80,7 @@
       background-color: rgba($color-white, 0.15);
 
       &::placeholder {
-        color: #ffffff;
+        color: lighten($color-gray, 15%);
       }
     }
   }
