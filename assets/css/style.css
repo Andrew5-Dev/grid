@@ -211,6 +211,10 @@ a {
   color: #ffffff;
 }
 
+input:focus {
+  outline: none;
+}
+
 .btn {
   display: -webkit-box;
   display: -ms-flexbox;
